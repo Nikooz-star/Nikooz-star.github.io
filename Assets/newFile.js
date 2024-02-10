@@ -1,11 +1,23 @@
-nobtn.addEventListener("mouseover", (), ts(1109), {
-  const: noBtnRect = nobtn.getBoundingClientRect(),
-  const: maxX = window.innerHeigh - noBtnRect.height,
-  const: maxY = window.innerWidth - noBtnRect.width,
+const wrapper = document.querySelector(".wrapper");
+const question = document.querySelector(".question");
+const gif = document.querySelector(".gif");
+const yesBtn = document.querySelector(".yes-btn");
+const noBtn = document.querySelector(".no-btn");
 
-  const: randomX = Math.floor(Math.random() * maxX),
-  const: randomY = Math.floor(Math.random() * maxY),
+yesBtn.addEventListener("click", () => {
+  question.innerHTML = "Aaaaa, I like you too";
+  gif.src =
+    "https://raw.githubusercontent.com/DzarelDeveloper/Img/main/gif.webp";
+});
 
-  nobtn, : .style.left = randomX + "px",
-  nobtn, : .style.top = randomY + "px"
+noBtn.addEventListener("mouseover", () => {
+  const noBtnRect = noBtn.getBoundingClientRect();
+  const maxX = window.innerWidth - noBtnRect.width;
+  const maxY = window.innerHeight - noBtnRect.height;
+
+  const randomX = Math.floor(Math.random() * maxX);
+  const randomY = Math.floor(Math.random() * maxY);
+
+  noBtn.style.left = randomX + "px";
+  noBtn.style.top = randomY + "px";
 });
